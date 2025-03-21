@@ -1,17 +1,20 @@
 {
   "name": "song-request-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A real-time song request web app for restaurants",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["song", "request", "music", "socket.io", "express", "sqlite"],
+  "author": "Vigneshwar Reddy",
+  "license": "MIT",
   "dependencies": {
     "better-sqlite3": "^11.9.1",
     "express": "^4.21.2",
     "socket.io": "^4.8.1"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
