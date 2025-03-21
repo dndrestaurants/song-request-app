@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send a Song</title>
+</head>
+<body>
+  <h1>🎵 Request a Song</h1>
+  <form id="songForm">
+    <input type="url" id="youtube_link" placeholder="Enter YouTube Link" required />
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    document.getElementById('songForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const youtube_link = document.getElementById('youtube_link').value;
+
+      await fetch('/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ youtube_link })
+      });
+
+      alert('Song sent!');
+      document.getElementById('songForm').reset();
+    });
+  </script>
+</body>
+</html>

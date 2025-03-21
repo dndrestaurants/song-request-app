@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Song Requests</title>
+</head>
+<body>
+  <h1>🎧 Song Requests</h1>
+  <ul id="songsList"></ul>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const songsList = document.getElementById('songsList');
+
+    function addSong(link) {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+      songsList.prepend(li);
+    }
+
+    fetch('/requests')
+      .then(res => res.json())
+      .then(data => data.forEach(row => addSong(row.youtube_link)));
+
+    socket.on('new_song', (data) => {
+      alert('New song request received!');
+      addSong(data.link);
+    });
+  </script>
+</body>
+</html>
