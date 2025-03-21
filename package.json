@@ -6,11 +6,19 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["song", "request", "music", "socket.io", "express", "sqlite"],
+  "keywords": [
+    "song",
+    "request",
+    "music",
+    "socket.io",
+    "express",
+    "sqlite"
+  ],
   "author": "Vigneshwar Reddy",
   "license": "MIT",
   "dependencies": {
     "better-sqlite3": "^11.9.1",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "socket.io": "^4.8.1"
   },
